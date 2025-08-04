@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Product } from "../productType";
+import { format } from 'date-fns';
 import './productForm.css'
 
 export interface clientFormProps {
@@ -14,7 +15,7 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
     productName: "",
     productType: 0,
     numTerminal: 0,
-    soldAt: ""
+    soldAt: format(new Date(), 'yyyy-MM-dd HH:mm:ss')
   });
   const [isEditing, setIsEditing] = useState<boolean>(false);
     
