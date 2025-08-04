@@ -33,7 +33,7 @@ export default function clientsPage() {
     <>  
       {
         clients.map( (element,i ) => 
-          <div className="clientCard" key={'ele_'+i}>
+          <div className="clientCard" data-testid={'client-'+i} key={'ele_'+i}>
             <label>id:{element.id}</label> 
             <label>doc type:{element.docType}</label> 
             <label>doc num:{element.docNum}</label> 

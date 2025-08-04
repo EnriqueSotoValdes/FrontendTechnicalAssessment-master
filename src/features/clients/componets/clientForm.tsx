@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Client } from "../clientType";
-import './clientForm.css'
+import './clientForm.css';
 
 export interface clientFormProps {
   onClose: () => void;
@@ -48,6 +48,7 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">
             <label>id</label>
             <input 
+                data-testid="id"
                 name="id" 
                 type="number"
                 value={formData.id} 
@@ -57,6 +58,7 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">            
             <label>doc type</label>
             <input
+                data-testid="docType"
                 name="docType" 
                 value={formData.docType} 
                 onChange={handleChange} 
@@ -65,6 +67,7 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">
             <label>doc num</label>
             <input 
+                data-testid="docNum"
                 name="docNum" 
                 value={formData.docNum} 
                 onChange={handleChange} 
@@ -73,6 +76,7 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">
             <label>email</label>
             <input 
+                data-testid="email"
                 name="email" 
                 value={formData.email} 
                 onChange={handleChange} 
@@ -81,6 +85,7 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">
             <label>given name</label>
             <input 
+                data-testid="givenName"
                 name="givenName" 
                 value={formData.givenName} 
                 onChange={handleChange} 
@@ -89,6 +94,7 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">
             <label>family name</label>
             <input 
+                data-testid="familyName1"
                 name="familyName1" 
                 value={formData.familyName1} 
                 onChange={handleChange} 
@@ -97,14 +103,15 @@ export default function ClientForm({ onClose, onSubmit, clientSelected }: client
         <div className="field">
             <label>phone</label>
             <input 
+                data-testid="phone"
                 name="phone" 
                 value={formData.phone} 
                 onChange={handleChange} 
             />
         </div>
         <div className="buttonField">
-          <button onClick={handleSubmit}>{isEditing?'Edit':'Create'}</button>
-          <button onClick={onClose}>Cancel</button>
+          <button data-testid="submit" onClick={handleSubmit}>{isEditing?'Edit':'Create'}</button>
+          <button data-testid="cancel" onClick={onClose}>Cancel</button>
         </div>
       </div>
     </div>

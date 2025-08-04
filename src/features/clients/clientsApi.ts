@@ -6,21 +6,18 @@ export const getClients = async (): Promise<Client[]> => {
   return response.data;
 };
 
-export const postClients = async (client: Client): Promise<Client[]> => {
-  const response = await axios.post<Client[]>("/clients",client);
-  return response.data;
+export const postClients = async (client: Client) => {
+  await axios.post<Client[]>("/clients",client);
 };
 
-export const putClients = async (client: Client): Promise<Client[]> => {
-  const response = await axios.put<Client[]>("/clients",client);
-  return response.data;
+export const putClients = async (client: Client) => {
+   await axios.put<Client[]>("/clients",client);
 };
 
-export const deleteClients = async (client: Client): Promise<Client[]> => {
-  const response = await axios.delete<Client[]>("/clients",{
+export const deleteClients = async (client: Client) => {
+   await axios.delete<Client[]>("/clients",{
     data: client
   });
-  return response.data;
 };
 
 export const getClientById = async (id: string): Promise<Client> => {

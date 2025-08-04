@@ -47,6 +47,7 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
         <div className="field">
             <label>id</label>
             <input 
+                data-testid="id"
                 name="id" 
                 type="number"
                 value={formData.id} 
@@ -56,6 +57,7 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
         <div className="field">            
             <label>product name</label>
             <input
+                data-testid="productName"
                 name="productName" 
                 value={formData.productName} 
                 onChange={handleChange} 
@@ -64,6 +66,7 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
         <div className="field">
             <label>product type</label>
             <input 
+                data-testid="productType"
                 name="productType" 
                 type="number"
                 value={formData.productType} 
@@ -73,6 +76,7 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
         <div className="field">
             <label>num terminal</label>
             <input 
+                data-testid="numTerminal"
                 name="numTerminal" 
                 type="number"
                 value={formData.numTerminal} 
@@ -82,6 +86,7 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
         <div className="field">
             <label>sold at</label>
             <input 
+                data-testid="soldAt"
                 name="soldAt" 
                 type="datetime-local"
                 value={formData.soldAt} 
@@ -89,8 +94,8 @@ export default function ClientForm({ onClose, onSubmit, productSelected }: clien
             />
         </div>        
         <div className="buttonField">
-          <button onClick={handleSubmit}>{isEditing?'Edit':'Create'}</button>
-          <button onClick={onClose}>Cancel</button>
+          <button data-testid="submit" onClick={handleSubmit}>{isEditing?'Edit':'Create'}</button>
+          <button data-testid="cancel" onClick={onClose}>Cancel</button>
         </div>
       </div>
     </div>

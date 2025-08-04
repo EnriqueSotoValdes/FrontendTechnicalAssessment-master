@@ -6,21 +6,18 @@ export const getProducts = async (): Promise<Product[]> => {
   return response.data;
 };
 
-export const postProducts = async (product: Product): Promise<Product[]> => {
-  const response = await axios.post<Product[]>("/products",product);
-  return response.data;
+export const postProducts = async (product: Product) => {
+  await axios.post<Product[]>("/products",product);
 };
 
-export const putProducts = async (product: Product): Promise<Product[]> => {
-  const response = await axios.put<Product[]>("/products",product);
-  return response.data;
+export const putProducts = async (product: Product) => {
+  await axios.put<Product[]>("/products",product);
 };
 
-export const deleteProducts = async (product: Product): Promise<Product[]> => {
-  const response = await axios.delete<Product[]>("/products",{
+export const deleteProducts = async (product: Product) => {
+  await axios.delete<Product[]>("/products",{
     data: product
   });
-  return response.data;
 };
 
 export const getProductById = async (id: string): Promise<Product> => {

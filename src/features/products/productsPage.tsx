@@ -35,7 +35,7 @@ export default function productPage() {
     <>  
       {
         products.map( (element,i ) => 
-          <div className="productCard" key={'ele_'+i}>
+          <div className="productCard" data-testid={'product-'+i} key={'ele_'+i}>
             <label>id:{element.id}</label> 
             <label>product name:{element.productName}</label> 
             <label>product type:{element.productType}</label> 
@@ -48,7 +48,7 @@ export default function productPage() {
           </div>
         )
       }
-     <button className="newButton" onClick={newButtonHandle}>New product</button>
+     <button className="newButton" onClick={newButtonHandle}>New Product</button>
      
       { isModalOpen && (
        <ProductForm
